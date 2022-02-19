@@ -5,4 +5,7 @@ class Node {
     Node next;
     Node previous;
 
+    Node(String data) {
+        this.data = data;
+    }
 }
