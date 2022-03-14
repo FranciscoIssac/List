@@ -1,20 +1,24 @@
 package uaslp.objetos.list.arraylist;
 
-public class ArrayList {
+import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.List;
+
+public class ArrayList <T> implements List <T> {
 
     private static final int DEFAULT_SIZE = 50;
-    private String[] array;
+    private T[] array;
     private  int size;
 
     public ArrayList() {
-        array = new String[DEFAULT_SIZE];
+        array = (T[])new Object[DEFAULT_SIZE];
     }
 
     public ArrayList(int size) {
-        array = new String[size];
+        array = (T[])new Object[size];
     }
 
-    public void addAtTail(String data) {
+    @Override
+    public void addAtTail(T data) {
         if(size == array.length) {
             increaseArraySize();
         }
@@ -23,7 +27,8 @@ public class ArrayList {
         size++;
     }
 
-    public void addAtFront(String data) {
+    @Override
+    public void addAtFront(T data) {
         if(size == array.length) {
             increaseArraySize();
         }
@@ -33,6 +38,7 @@ public class ArrayList {
         size++;
     }
 
+    @Override
     public void remove(int index) {
         if(index < 0 || index >= size) {
             return;
@@ -46,6 +52,7 @@ public class ArrayList {
         size--;
     }
 
+    @Override
     public void removeAll() {
         for(int i = 0; i < size; i++) {
             array[i] = null;
@@ -53,7 +60,8 @@ public class ArrayList {
         size = 0;
     }
 
-    public void setAt(int index, String data) {
+    @Override
+    public void setAt(int index, T data) {
         if(index >= 0 && index < size) {
             array[index] = data;
         }
@@ -65,20 +73,23 @@ public class ArrayList {
      * @return element at position index
      */
 
-    public String getAt(int index) {
+    @Override
+    public T getAt(int index) {
         return index >= 0 && index < size ? array[index] : null;
     }
 
-    public ArrayListIterator getIterator() {
-        return new ArrayListIterator(this);
+    @Override
+    public Iterator <T> getIterator() {
+        return new ArrayListIterator<>(this);
     }
 
+    @Override
     public int getSize() {
         return size;
     }
 
     private void increaseArraySize() {
-        String []newArray = new String[array.length * 2];
+        T[]newArray = (T[])new Object[array.length * 2];
 
         if (size >= 0) System.arraycopy(array, 0, newArray, 0, size);
 
