@@ -3,22 +3,22 @@ package uaslp.objetos.list.arraylist;
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
 
-public class ArrayList <T> implements List <T> {
+public class ArrayList implements List {
 
     private static final int DEFAULT_SIZE = 50;
-    private T[] array;
+    private String[] array;
     private  int size;
 
     public ArrayList() {
-        array = (T[])new Object[DEFAULT_SIZE];
+        array = new String[DEFAULT_SIZE];
     }
 
     public ArrayList(int size) {
-        array = (T[])new Object[size];
+        array = new String[size];
     }
 
     @Override
-    public void addAtTail(T data) {
+    public void addAtTail(String data) {
         if(size == array.length) {
             increaseArraySize();
         }
@@ -28,7 +28,7 @@ public class ArrayList <T> implements List <T> {
     }
 
     @Override
-    public void addAtFront(T data) {
+    public void addAtFront(String data) {
         if(size == array.length) {
             increaseArraySize();
         }
@@ -61,7 +61,7 @@ public class ArrayList <T> implements List <T> {
     }
 
     @Override
-    public void setAt(int index, T data) {
+    public void setAt(int index, String data) {
         if(index >= 0 && index < size) {
             array[index] = data;
         }
@@ -74,13 +74,13 @@ public class ArrayList <T> implements List <T> {
      */
 
     @Override
-    public T getAt(int index) {
+    public String getAt(int index) {
         return index >= 0 && index < size ? array[index] : null;
     }
 
     @Override
-    public Iterator <T> getIterator() {
-        return new ArrayListIterator<>(this);
+    public Iterator getIterator() {
+        return new ArrayListIterator(this);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class ArrayList <T> implements List <T> {
     }
 
     private void increaseArraySize() {
-        T[]newArray = (T[])new Object[array.length * 2];
+        String[]newArray = new String[array.length * 2];
 
         if (size >= 0) System.arraycopy(array, 0, newArray, 0, size);
 

@@ -8,23 +8,23 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Aquí se prueba con el ArrayList");
 
-        List<String> team1 = new ArrayList<>();
-        List<String> team2 = new ArrayList<>();
-        List<String> team3 = new ArrayList<>();
+        List team1 = new ArrayList();
+        List team2 = new ArrayList();
+        List team3 = new ArrayList();
 
         pruebaListas(team1, team2, team3);
 
         System.out.println();
         System.out.println("Aquí se prueba con el LinkedList");
 
-        team1 = new LinkedList<>();
-        team2 = new LinkedList<>();
-        team3 = new LinkedList<>();
+        team1 = new LinkedList();
+        team2 = new LinkedList();
+        team3 = new LinkedList();
 
         pruebaListas(team1, team2, team3);
     }
 
-    private static void pruebaListas(List<String> team1, List<String> team2, List<String> team3) {
+    private static void pruebaListas(List team1, List team2, List team3) {
 
         team1.addAtTail("Jesús");
         team1.addAtTail("Salomón");
@@ -36,7 +36,7 @@ public class Main {
 
         team3.addAtFront("Imelda");
 
-        Iterator<String> iterator;
+        Iterator iterator;
 
         iterator = team1.getIterator();
 
