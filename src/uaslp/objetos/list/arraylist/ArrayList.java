@@ -3,22 +3,22 @@ package uaslp.objetos.list.arraylist;
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
 
-public class ArrayList implements List {
+public class ArrayList <T> implements List <T> {
 
     private static final int DEFAULT_SIZE = 50;
-    private String[] array;
+    private T[] array;
     private  int size;
 
     public ArrayList() {
-        array = new String[DEFAULT_SIZE];
+        array = (T[])new Object[DEFAULT_SIZE];
     }
 
     public ArrayList(int size) {
-        array = new String[size];
+        array = (T[])new Object[size];
     }
 
     @Override
-    public void addAtTail(String data) {
+    public void addAtTail(T data) {
         if(size == array.length) {
             increaseArraySize();
         }
@@ -28,7 +28,7 @@ public class ArrayList implements List {
     }
 
     @Override
-    public void addAtFront(String data) {
+    public void addAtFront(T data) {
         if(size == array.length) {
             increaseArraySize();
         }
@@ -61,7 +61,7 @@ public class ArrayList implements List {
     }
 
     @Override
-    public void setAt(int index, String data) {
+    public void setAt(int index, T data) {
         if(index >= 0 && index < size) {
             array[index] = data;
         }
@@ -74,13 +74,13 @@ public class ArrayList implements List {
      */
 
     @Override
-    public String getAt(int index) {
+    public T getAt(int index) {
         return index >= 0 && index < size ? array[index] : null;
     }
 
     @Override
-    public Iterator getIterator() {
-        return new ArrayListIterator(this);
+    public Iterator <T> getIterator() {
+        return new ArrayListIterator<>(this);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class ArrayList implements List {
     }
 
     private void increaseArraySize() {
-        String[]newArray = new String[array.length * 2];
+        T[]newArray = (T[])new Object[array.length * 2];
 
         if (size >= 0) System.arraycopy(array, 0, newArray, 0, size);
 
