@@ -2,6 +2,8 @@ package uaslp.objetos.list.arraylist;
 
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 
 public class ArrayList <T> implements List <T> {
 
@@ -18,7 +20,11 @@ public class ArrayList <T> implements List <T> {
     }
 
     @Override
-    public void addAtTail(T data) {
+    public void addAtTail(T data) throws NotNullValuesAllowedException {
+        if(data == null) {
+            throw new NotNullValuesAllowedException();
+        }
+
         if(size == array.length) {
             increaseArraySize();
         }
@@ -28,7 +34,11 @@ public class ArrayList <T> implements List <T> {
     }
 
     @Override
-    public void addAtFront(T data) {
+    public void addAtFront(T data) throws NotNullValuesAllowedException {
+        if(data == null) {
+            throw new NotNullValuesAllowedException();
+        }
+
         if(size == array.length) {
             increaseArraySize();
         }
@@ -39,9 +49,10 @@ public class ArrayList <T> implements List <T> {
     }
 
     @Override
-    public void remove(int index) {
+    public void remove(int index) throws NotValidIndexException {
+
         if(index < 0 || index >= size) {
-            return;
+            throw new NotValidIndexException(index);
         }
 
         if (size - 1 - index >= 0) {
@@ -61,9 +72,15 @@ public class ArrayList <T> implements List <T> {
     }
 
     @Override
-    public void setAt(int index, T data) {
+    public void setAt(int index, T data) throws NotValidIndexException, NotNullValuesAllowedException{
+        if(data == null) {
+            throw new NotNullValuesAllowedException();
+        }
+
         if(index >= 0 && index < size) {
             array[index] = data;
+        } else {
+            throw new NotValidIndexException(index);
         }
     }
 
@@ -74,8 +91,12 @@ public class ArrayList <T> implements List <T> {
      */
 
     @Override
-    public T getAt(int index) {
-        return index >= 0 && index < size ? array[index] : null;
+    public T getAt(int index) throws NotValidIndexException{
+        if(index >= 0 && index < size) {
+            return array[index];
+        } else {
+            throw new NotValidIndexException(index);
+        }
     }
 
     @Override

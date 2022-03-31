@@ -2,13 +2,21 @@ package uaslp.objetos.list.linkedlist;
 
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
+
+import javax.xml.stream.events.NotationDeclaration;
 
 public class LinkedList <T> implements List <T>{
     private Node <T> head;
     private Node <T> tail;
     private int size;
 
-    public void addAtTail(T data) {
+    public void addAtTail(T data) throws NotNullValuesAllowedException{
+        if(data == null) {
+            throw new NotNullValuesAllowedException();
+        }
+
         Node <T> node = new Node <> (data);
 
         if(size == 0) {
@@ -22,7 +30,11 @@ public class LinkedList <T> implements List <T>{
         size ++;
     }
 
-    public void addAtFront(T data) {
+    public void addAtFront(T data) throws NotNullValuesAllowedException{
+        if(data == null) {
+            throw new NotNullValuesAllowedException();
+        }
+
         Node <T> node = new Node <> (data);
 
         if(size ==0) {
@@ -36,7 +48,11 @@ public class LinkedList <T> implements List <T>{
         size++;
     }
 
-    public void remove(int index) {
+    public void remove(int index) throws NotValidIndexException {
+        if(index < 0 || index >= size) {
+            throw new NotValidIndexException(index);
+        }
+
         Node <T> node = findNode(index);
 
         if(node == null) {
@@ -69,7 +85,15 @@ public class LinkedList <T> implements List <T>{
         size = 0;
     }
 
-    public void setAt(int index, T data) {
+    public void setAt(int index, T data) throws NotValidIndexException, NotNullValuesAllowedException {
+        if(data == null) {
+            throw new NotNullValuesAllowedException();
+        }
+
+        if(index < 0 || index >= size) {
+            throw new NotValidIndexException(index);
+        }
+
         Node <T> node = findNode(index);
 
         if(node != null) {
@@ -82,7 +106,11 @@ public class LinkedList <T> implements List <T>{
      * @return element at position index
      */
 
-    public T getAt(int index) {
+    public T getAt(int index) throws NotValidIndexException {
+        if(index < 0 || index >= size) {
+            throw new NotValidIndexException(index);
+        }
+
         Node <T> node = findNode(index);
 
         return  node == null ? null : node.data;
