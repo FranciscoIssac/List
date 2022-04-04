@@ -36,10 +36,6 @@ public class Main {
 
     private static void pruebaListas(List<String> team1, List<String> team2, List<String> team3) throws NotValidIndexException, NotNullValuesAllowedException {
 
-        //team1.remove(7);
-
-        team1.setAt(7,null);
-
         team1.addAtTail("Jesús");
         team1.addAtTail("Salomón");
         team1.addAtTail("Yael");

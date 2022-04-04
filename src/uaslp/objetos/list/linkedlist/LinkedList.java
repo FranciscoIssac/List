@@ -5,14 +5,12 @@ import uaslp.objetos.list.List;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 import uaslp.objetos.list.exception.NotValidIndexException;
 
-import javax.xml.stream.events.NotationDeclaration;
-
-public class LinkedList <T> implements List <T>{
+public class LinkedList <T> implements List <T> {
     private Node <T> head;
     private Node <T> tail;
     private int size;
 
-    public void addAtTail(T data) throws NotNullValuesAllowedException{
+    public void addAtTail(T data) throws NotNullValuesAllowedException {
         if(data == null) {
             throw new NotNullValuesAllowedException();
         }
@@ -30,7 +28,7 @@ public class LinkedList <T> implements List <T>{
         size ++;
     }
 
-    public void addAtFront(T data) throws NotNullValuesAllowedException{
+    public void addAtFront(T data) throws NotNullValuesAllowedException {
         if(data == null) {
             throw new NotNullValuesAllowedException();
         }
@@ -49,29 +47,15 @@ public class LinkedList <T> implements List <T>{
     }
 
     public void remove(int index) throws NotValidIndexException {
-        if(index < 0 || index >= size) {
-            throw new NotValidIndexException(index);
-        }
-
         Node <T> node = findNode(index);
-
-        if(node == null) {
-            return;
-        }
 
         if(size == 1) {
             head = null;
             tail = null;
         } else if(node == head){
             head = node.next;
-            if(head != null) {
-                head.previous = null;
-            }
         } else if(node == tail) {
             tail = node.previous;
-            if(tail != null) {
-                tail.next = null;
-            }
         } else {
             node.previous.next = node.next;
             node.next.previous = node.previous;
@@ -96,9 +80,7 @@ public class LinkedList <T> implements List <T>{
 
         Node <T> node = findNode(index);
 
-        if(node != null) {
-            node.data = data;
-        }
+        node.data = data;
     }
 
     /**
@@ -124,9 +106,9 @@ public class LinkedList <T> implements List <T>{
         return size;
     }
 
-    private Node <T> findNode(int index) {
+    private Node <T> findNode(int index) throws NotValidIndexException {
         if(index < 0 || index >= size) {
-            return null;
+            throw new NotValidIndexException(index);
         }
 
         Node <T> node = head;
