@@ -118,6 +118,7 @@ public class HashSetTest {
         StringBuilder builder;
         int i = 5;
 
+        // genera 100 strings aleatorios y los almacena en el HashSet
         for(int s = 0; s < 100; s++) {
             theAlphaNumericS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789";
             builder = new StringBuilder(i);
@@ -138,64 +139,4 @@ public class HashSetTest {
         Assertions.assertEquals(101, size);
     }
 
-    /*
-    @Test
-    public void givenANewHashSetWith_whenAddAnotherElement_thenSizeIsSix() {
-        // Given:
-        HashSet<String> hashSet = new HashSet<>();
-        hashSet.add("Adios");
-        hashSet.add("Mundo");
-        hashSet.add("Cruel");
-        hashSet.add("Hola");
-        hashSet.add("Hello");
-        hashSet.add("1");
-        hashSet.add("2");
-        hashSet.add("3");
-        hashSet.add("4");
-        hashSet.add("5");
-        hashSet.add("6");
-        hashSet.add("7");
-        hashSet.add("8");
-        hashSet.add("9");
-        hashSet.add("10");
-        hashSet.add("11");
-        hashSet.add("12");
-        hashSet.add("13");
-        hashSet.add("14");
-        hashSet.add("15");
-        hashSet.add("16");
-        hashSet.add("17");
-        hashSet.add("18");
-        hashSet.add("19");
-        hashSet.add("20");
-        hashSet.add("21");
-        hashSet.add("22");
-        hashSet.add("23");
-        hashSet.add("24");
-        hashSet.add("25");
-        hashSet.add("26");
-        hashSet.add("27");
-        hashSet.add("28");
-        hashSet.add("29");
-        hashSet.add("30");
-        hashSet.add("31");
-        hashSet.add("32");
-        hashSet.add("33");
-        hashSet.add("34");
-        hashSet.add("35");
-        hashSet.add("36");
-        hashSet.add("37");
-        hashSet.add("38");
-        hashSet.add("39");
-
-        // When:
-        hashSet.add("World");
-
-
-        // Then:
-        int size = hashSet.size();
-
-        Assertions.assertEquals(45, size);
-    }
-*/
 }
