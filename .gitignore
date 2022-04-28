@@ -1,4 +1,8 @@
 .idea
 out\
 *.iml
+<<<<<<< HEAD
 target\
+=======
+target\
+>>>>>>> 33b4d99ab5ab510300e8bae3001fdd5956f02d0d

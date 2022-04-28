@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.012" tests="19" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.024" tests="19" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="MX"/>
     <property name="sun.boot.library.path" value="C:\dev-tools\Java\jdk-18\bin"/>
-    <property name="sun.java.command" value="C:\Users\FRANCI~1\AppData\Local\Temp\surefire14484186708038475537\surefirebooter18203476051114749660.jar C:\Users\Francisco\AppData\Local\Temp\surefire14484186708038475537 2022-04-16T14-35-37_810-jvmRun1 surefire17019389643565002759tmp surefire_015054631451364374322tmp"/>
+    <property name="sun.java.command" value="C:\Users\FRANCI~1\AppData\Local\Temp\surefire11962593090060316293\surefirebooter6867061403322120079.jar C:\Users\Francisco\AppData\Local\Temp\surefire11962593090060316293 2022-04-16T17-34-10_132-jvmRun1 surefire2053053545876553096tmp surefire_08539763658612060127tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Francisco\Desktop\TOO\Parcial-3\proyectos\list\target\test-classes;C:\Users\Francisco\Desktop\TOO\Parcial-3\proyectos\list\target\classes;C:\Users\Francisco\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\Francisco\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\Francisco\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Francisco\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\Francisco\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\Francisco\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\FRANCI~1\AppData\Local\Temp\surefire14484186708038475537\surefirebooter18203476051114749660.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\FRANCI~1\AppData\Local\Temp\surefire11962593090060316293\surefirebooter6867061403322120079.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18+36-2087"/>
@@ -67,12 +67,12 @@
   <testcase name="givenAListWithThreeElements_whenRemoveElementAtTail_thenSizeIsTwo" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
   <testcase name="givenAListWithTwoElements_whenSetAtIndex3_thenNotValidIndexExceptionIsThrown" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
   <testcase name="givenAListWithThreeElements_whenRemoveIndex1_thenSizeIsTwo" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
-  <testcase name="givenANewList_whenAddAtFrontAnElement_thenSizeIsOne" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
-  <testcase name="givenAListWithThreeElements_whenGetIterator_thenIteratorWorksOverAllThreeElements" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.001"/>
+  <testcase name="givenANewList_whenAddAtFrontAnElement_thenSizeIsOne" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.001"/>
+  <testcase name="givenAListWithThreeElements_whenGetIterator_thenIteratorWorksOverAllThreeElements" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
   <testcase name="givenAListWith1Element_whenAddAtTailAnElement_thenSizeIsTwo" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
   <testcase name="givenANewList_whenGetSize_thenResultIsZero" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
-  <testcase name="givenAListWithTwoElements_whenAddSetAtNullValue_thenNotNotNullValuesAllowedExceptionIsThrown" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.001"/>
-  <testcase name="givenAListWithOneElement_whenRemove_thenSizeIsZero" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.001"/>
-  <testcase name="givenANewList_whenAddAtTailAnElement_thenSizeIsOne" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.001"/>
-  <testcase name="givenANewList_whenGetAt_thenNotValidIndexExceptionIsThrown" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.003"/>
+  <testcase name="givenAListWithTwoElements_whenAddSetAtNullValue_thenNotNotNullValuesAllowedExceptionIsThrown" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.009"/>
+  <testcase name="givenAListWithOneElement_whenRemove_thenSizeIsZero" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0"/>
+  <testcase name="givenANewList_whenAddAtTailAnElement_thenSizeIsOne" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.002"/>
+  <testcase name="givenANewList_whenGetAt_thenNotValidIndexExceptionIsThrown" classname="uaslp.objetos.list.linkedlist.LinkedListTest" time="0.004"/>
 </testsuite>
